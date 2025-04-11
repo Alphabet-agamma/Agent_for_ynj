@@ -1,5 +1,4 @@
 from langgraph.graph import StateGraph, END
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import AnyMessage, SystemMessage, HumanMessage
 from langchain_community.chat_models import ChatOllama
 from typing import Annotated, TypedDict
