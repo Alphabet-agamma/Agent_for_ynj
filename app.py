@@ -68,7 +68,12 @@ def process_query(user_input):
         st.error(f"Error: {e}")
 
 def main():
-    csv_file = "touristAttractions.csv"
+    csv_file = [
+        "tourapi_culturalfacilities_processed.csv",
+        "tourapi_leisuresports_processed.csv",
+        "tourapi_shopping_processed.csv",
+        "tourapi_touristattractions_processed.csv"        
+    ]
     initialize_agent(csv_file)
     render_custom_css()
     render_ui()

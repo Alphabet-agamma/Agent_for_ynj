@@ -39,7 +39,8 @@ TRAVEL_SYSTEM_PROMPT = """
 
 class TravelAgent:
     def __init__(self, csv_file):
-        self.travel_data = load_travel_data(csv_file)
+        dataframes = [load_travel_data(file) for file in csv_file]
+        self.travel_data = pd.concat(dataframes, ignore_index=True)
 
         builder = StateGraph(AgentState)
         builder.add_node("analyze_request", self.analyze_request)
